@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package grpc;
+option go_package="grpc/proto";
+
+message details {
+    string username = 1;
+    string name = 2;
+}
+
+message detailsrequest {
+    details information = 1;
+}
+
+message detailsresponse {
+    details information_response = 1;
+}
+
+service detailsservice {
+    rpc info(detailsrequest) returns (detailsresponse){};
+}
